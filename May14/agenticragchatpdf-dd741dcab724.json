@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "agenticragchatpdf",
+  "private_key_id": "dd741dcab7247f03847906a18d0f8254cb6ffc25",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDIjm7YRxpA3w4S\nftq4nFbf9Dc2hbV6SaxLw28x0mNLuBkg54Pg+dnKHsR3AY1a+eZiaq596HAFkDP5\niWLoZiNfpG81ziq6UwHPRi2l/d9KSJFNjHiQS/u7D367u9mAGQPkMnaXW3KyRWj5\nMOePh9F7J6Jh4eB4CR4aVGkuKjeC3ducGA/R2ZqcMbja8EZn9KmZW+r+ULopoNMk\n6y7ooWp8M4QaUTbBxVEtd9zphkFH7bVhCJekKzMszeiyN75vlI4nTxmUsVQcUY7Q\n4Mp6mPTHFWnIfP0GNLieXUcZR3oO4vnRcGPMsxP+3bM/tAToQ7mkkRZVXSjhWRJ1\ngbv+8rmxAgMBAAECggEAC8yjdVqDjycAZTKs7BkYnF76I51MvsfYWPHD2D7MRD9t\nzQuJ7QHOIC/ct7Kx7hUPSqGDqBk1hAJGqIr+dHVT5fPe7h+10FYDYH48v8wWp8Bq\nuhEGY9jwk8IW3vUvl/OA0NtuMjv5XMcsJKMNsJpZRwFfMpqPMgi5SmvGb2ag8vQ/\nO5jX7W/gustDSOw3xAciyIkfhkPMBYcmpV8gRZNUp43m0iTbgq3mgft2w9pvCDEH\nUV0JGGLKy8tdh/bGgWYSrcebS/gRf/yDPxgxvs3fcgbi8wdwSfCZ52CT+K7uR7ik\nE5qclCgDr+mXcPUg+YsATbt/XbAyTHMLmIcsTlccRQKBgQD9f2DpKjyLPJt4EakB\nO+F6gYVOBLa3wDlvD36CA2m2kJSVNuGY456Q9iY86e2XaQy7vH31ao9RTjrvE8ip\nLIhbV1wnrPOc81GH2f/ax2baawZKeDewIfiiJSSL9/LuO/STXCuA0CEI+hCHemJ7\n59zQY7WCYG5CACEJYo2BGHJYvQKBgQDKiUPfR18JYvC6Cw70jZkhZ40LVHDgLjOs\nwDS2Rtw6tWO3unE3azqKYMi0FAhYsfnBmLMrkSQHRuKxbSYiYTw6yhZcetBCFjFs\n/R+oC0KNXHw1te2KA/6/8k87a3/N9Y+m/mTkqXBGetDEF74Pq8zz7WWJ87vlMZEA\nON0rR73WBQKBgAyGTJ14jsE6X1wRU05STROmbpWqOfTeNHg+Rbvau1Bf2Fd+/Kp3\nJJB4+O6tiCWg9RYZfAeyGh6kRNknGxTwtFP+/vie3PJ2OyMBLFj83SIRg6AOTIIR\nS52HRET+HSyUHcNiHGwi3F77K/HlpBQHIqvRIVittwTfyMIT8nXcZVnpAoGAdNLc\nTWvzi4yAYi+Cvtj2HOiH2KMqQIUl1V1AimsxGMQL8qweJeM57xuIaSas8cwmzd5w\nao7bgz8F/2V/+5CulxJ993X3rkby13Thz6I/Dx7rnmeDznojdUAlJ5cILxqXc7GF\nLMf3NRAeXx16ybtFCuZCDWKDXN5MTx59pDtLaqkCgYB60TL4uW3wXr7WjioWaiXb\nMnjOL8D6ijdVENsIq0yDHcNP9vzNWKBWMMjs6MYSUn2MtQfkDgeBUgr6tSO6Bp7Z\nc3Qf5dGGsu/T2buBaQ6aTP94z0WCoNu6ouKNLqv4+XlzUBa+1BC53L6nxVn5r7Cf\nqOSBFK4WMfUg2RaUakk0Mg==\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account@agenticragchatpdf.iam.gserviceaccount.com",
+  "client_id": "109894673098046784835",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account%40agenticragchatpdf.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
