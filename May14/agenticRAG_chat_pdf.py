@@ -12,19 +12,7 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 import fitz  
 
-from google.oauth2 import service_account
 
-SCOPES = ["https://www.googleapis.com/auth/generative-language.embedding"]
-SERVICE_ACCOUNT_PATH = "C:\\Users\\abhir\\OneDrive\\Documents\\Summer Internship 2025\\Week2\\May14\\agenticragchatpdf-dd741dcab724.json"
-
-
-
-if not os.path.exists(SERVICE_ACCOUNT_PATH):
-    raise FileNotFoundError(f"Could not find the service account file at: {SERVICE_ACCOUNT_PATH}")
-
-credentials = service_account.Credentials.from_service_account_file(
-    SERVICE_ACCOUNT_PATH, scopes=SCOPES
-)
 
 
 
