@@ -12,15 +12,10 @@ from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 import fitz  
 
-
-
-
-
-
 load_dotenv()
 
-
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+os.environ["GOOGLE_API_KEY"] = "AIzaSyDBJp_ZXsvzTVpClNNOD0i5D84tRLTBsfU"
+genai.configure()  
 
 def get_pdf_text(pdf_docs):
     text = ""
@@ -46,9 +41,10 @@ def get_vector_store(text_chunks):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
     vector_store = Chroma.from_texts(
         texts=text_chunks,
-        embedding=embeddings
+        embedding=embeddings,
+        persist_directory="chroma_index"  
     )
-    vector_store.save_local("chroma_index")
+    vector_store.persist()
     return vector_store
 
 def get_conversational_chain():
@@ -63,31 +59,48 @@ def get_conversational_chain():
     - Always cite the page number(s) when referencing information directly.
 
     DOCUMENT CONTEXT:
-    {context}  # This will be dynamically populated with chunks of text from the PDFs.
+    {context}
 
     USER QUESTION:
     {question}
 
     YOUR RESPONSE:
     """
-    model = ChatGoogleGenerativeAI(model="models/chat-bison-001", temperature=0.3)
-    prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
-    chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
-    return chain
+    try:
+        model = ChatGoogleGenerativeAI(model="models/chat-bison-001", temperature=0.3)
+        prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
+        chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
+        return chain
+    except Exception as e:
+        st.error(f"Error initializing conversational chain: {e}")
+        return None
 
 def user_input(user_question):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
-    new_db = Chroma.load_local("chroma_index", embeddings)
-    docs = new_db.similarity_search(user_question)
 
-    chain = get_conversational_chain()
-    response = chain(
-        {"input_documents": docs, "question": user_question},
-        return_only_outputs=True
-    )
+    try:
+        new_db = Chroma(persist_directory="chroma_index", embedding_function=embeddings)
+    except Exception as e:
+        st.error(f"Failed to load vector store: {e}")
+        return
 
-    st.write("### Reply:")
-    st.write(response["output_text"])
+    try:
+        docs = new_db.similarity_search(user_question)
+        if not docs:
+            st.warning("No relevant documents found for your query.")
+            return
+    except Exception as e:
+        st.error(f"Error during similarity search: {e}")
+        return
+
+    try:
+        chain = get_conversational_chain()
+        if chain:
+            response = chain({"input_documents": docs, "question": user_question}, return_only_outputs=True)
+            st.write("### Reply:")
+            st.write(response["output_text"])
+    except Exception as e:
+        st.error(f"An error occurred while generating the response: {e}")
 
 def main():
     st.set_page_config(page_title="Chat with Multiple PDFs")
