@@ -1,9 +1,11 @@
 import autogen
 import os
+
+API_KEY=os.getenv('OPENAI_API_KEY')
 config_list=[
     {
         'model':'gpt-3.5-turbo-16k',
-        'api_key':os.getenv('OPENAI_API_KEY')
+        'api_key':API_KEY
     }
 ]
 
