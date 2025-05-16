@@ -1,0 +1,26 @@
+Single-Agent RAG:
+1. Architecture: A single agent is responsible for both retrieving relevant information from a knowledge base and generating the response.
+2. Advantages:
+    - Simple to implement and maitain due to the unified workflow.
+    - Lower computational overhead as only one agent is active.
+    - Faster response times since retrieval and generation are tightly integrated.
+3. Limitations:
+    - Limited scalability as the single agent must handle all tasks, leading to potential bottlenecks.
+    - Less modular, making it harder to optimize retrieval and generation independently.
+4. Use Cases:
+    - Ideal for applications with small or static knowledge bases.
+    - Suitable where quick responses are prioritized over systems complexity.
+
+Multi-Agent RAG:
+1. Architecture: Multiple agents collaborate, with specialized roles for retrieval and generation. Some setups might include additional agents for validation or re-ranking retrieved results.
+2. Advantages:
+    - Highly scalable as tasks are distributed among specialized agents.
+    - Modular approach allows independent optimisationn of retrieval and generation components.
+    - Greater robustness, as failure in one agent can be mitigated by fallback strategies redundancy.
+3. Limitations:
+    - Increased complexity in system design and coordination between agents.
+    - Potential delays in response times due to communication overhead.
+4. Use Cases:
+    - Well-suited for large or dynamic bases that require frequent updates.
+    - Optimal for applications demanding high accuracy and flexibility, such as multi-domain conversational systems.
+    
