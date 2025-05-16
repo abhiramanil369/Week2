@@ -1,10 +1,9 @@
 import autogen
-
+import os
 config_list=[
     {
         'model':'gpt-3.5-turbo-16k',
-        'api_key':'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'
-
+        'api_key':os.getenv('OPENAI_API_KEY')
     }
 ]
 
@@ -39,4 +38,3 @@ user_proxy.initiate_chat(
     assistant,
     message=task
 )
-print(self.chat_messages[sender])
