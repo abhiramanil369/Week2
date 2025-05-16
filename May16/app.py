@@ -1,27 +1,27 @@
 import autogen
 import os
-import os
-print(os.getenv('GEMINI_FLASH_API_KEY'))
-API_KEY = os.getenv('GEMINI_FLASH_API_KEY')
+from dotenv import load_dotenv
 
+load_dotenv()
+API_KEY=os.getenv('GEMINI_FLASH_API_KEY')
 config_list=[
     {
-        'model': 'gemini-flash-model',  
-        'api_key': API_KEY
+        'model':'gemini-flash-model',
+        'base_url': 'http://localhost:8000/v1',
+        'api_key':API_KEY
+        
     }
 ]
 
 llm_config={
-    "seed": 42,
-    "config_list": config_list,
-    "temperature": 0
+    "seed":42,
+    "config_list":config_list,
+    "temperature":0
 }
-
 assistant = autogen.AssistantAgent(
     name="assistant",
     llm_config=llm_config
 )
-
 user_proxy = autogen.UserProxyAgent(
     name="user_proxy",
     human_input_mode="NEVER",
